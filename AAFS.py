@@ -231,7 +231,7 @@ ax[1].set_xlabel('Kp')
 ax[1].set_xticks(np.arange(0,10))
 
 # Date format is the American MM/DD/YYYY, feel free to localize to your region
-time=str(now.month)+'/'+str(now.day)+'/'+str(now.year)+' at '+str(now.hour).zfill(2)+':'+str(now.minute)+' UTC'
+time=str(now.month)+'/'+str(now.day)+'/'+str(now.year)+' at '+str(now.hour).zfill(2)+':'+str(now.minute).zfill(2)+' UTC'
 ax[1].set_title('Kp Probabilities over the Next 3 Hours\nBased on 100 Closest Historical Analogs\nGenerated on '+time,fontsize=8)
 
 plt.tight_layout()
