@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import requests
+from datetime import datetime,timezone
 
 ###############################################################################
 
@@ -178,6 +179,8 @@ conditions, and using the right panel to actually inform your decisions.
 
 """
 
+now=datetime.now(tz=timezone.utc)
+
 plt.style.use('dark_background')
 
 fig,ax=plt.subplots(nrows=1,ncols=2,dpi=500)
@@ -227,7 +230,9 @@ ax[1].set_xlabel('Kp')
 
 ax[1].set_xticks(np.arange(0,10))
 
-ax[1].set_title('Kp Probabilities over the Next 3 Hours\nBased on 100 Closest Historical Analogs',fontsize=8)
+# Date format is the American MM/DD/YYYY, feel free to localize to your region
+time=str(now.month)+'/'+str(now.day)+'/'+str(now.year)+' at '+str(now.hour).zfill(2)+':'+str(now.minute)+' UTC'
+ax[1].set_title('Kp Probabilities over the Next 3 Hours\nBased on 100 Closest Historical Analogs\nGenerated on '+time,fontsize=8)
 
 plt.tight_layout()
 
