@@ -28,9 +28,7 @@ bz: str, int, or float
 """
 
 path='/Users/sxb1072/Desktop/DSCOVRarchive/'
-
 solarwind='latest'
-
 bz='latest'
 
 ###############################################################################
@@ -213,15 +211,15 @@ ax[0].set_ylabel('Bz ($nT$)')
 ax[0].set_title('Aug 2000 thru Feb 2025 Archive of\nSolar Wind Speed and IMF Bz at L1',fontsize=8)
 ax[0].text(220,-59,'GitHub.com/SamBrandtMeteo',fontsize=4,ha='left',va='bottom')
 
-n, bins, patches =ax[1].hist(KpA,bins=np.arange(0,10))
+n, bins, patches = ax[1].hist(KpA,bins=np.arange(0,10))
 colors = ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','lime','yellow','orange','red','magenta']
 
 for patch, color in zip(patches, colors):
     patch.set_facecolor(color)
     
 ax[1].set_xlim(0,9)
-if max(n)>50:
-    ax[1].set_ylim(0,max(n)+1)
+if max(n)>46:
+    ax[1].set_ylim(0,max(n)+5)
 else:
     ax[1].set_ylim(0,50)
 
@@ -234,9 +232,14 @@ ax[1].set_xticks(np.arange(0,10))
 time=str(now.month)+'/'+str(now.day)+'/'+str(now.year)+' at '+str(now.hour).zfill(2)+':'+str(now.minute).zfill(2)+' UTC'
 ax[1].set_title('Kp Probabilities over the Next 3 Hours\nBased on 100 Closest Historical Analogs\nGenerated on '+time,fontsize=8)
 
+for i in range(0,9):
+    ax[1].text(i+0.5,n[i]+1,str(int(n[i]))+'%',color=colors[i],ha='center',va='bottom',fontsize=6)
+
 plt.tight_layout()
 
 plt.show()
+
+###############################################################################
 
 """
 If you want the code to save the image to your computer,
