@@ -130,7 +130,7 @@ if type(solarwind)==str or type(bz)==str:
 
 ###############################################################################
 
-df=pd.read_csv(path+'L1Archive.csv')
+df=pd.read_csv(path+'L1archive.csv')
 Bz=np.array(df['Bz'])
 Vp=np.array(df['Vp'])
 Kp3=np.array(df['Kp3'])
