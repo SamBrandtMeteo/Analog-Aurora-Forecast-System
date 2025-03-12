@@ -4,22 +4,22 @@ it to work.
 
 It contains 8 columns:
 
-1) Year
+1) Year:
 The year of the L1 observations.
-2) Month
+3) Month:
 The month of the L1 observations.
-3) Day
+4) Day:
 The day of the L1 observations.
-4) BeginHour
+5) BeginHour:
 In UTC; the hour that marks the end of the 1 hour averaging period for solar wind and Bz,
 and the beginning of the subsequent 3 hour period over which Kp was measured.
-5) Vp
+6) Vp:
 The bulk proton speed of the solar wind at L1 in units of kilometers per second.
-6) Dp
+7) Dp:
 The density of the protons at L1 in units of protons per cubic centimeter.
-7) Bz
+8) Bz:
 The z-component of the interplanetary magentic field at L1 in units of nanoTeslas.
-8) Kp3
+9) Kp3:
 The observed finalized Kp index from GFZ (https://www.gfz.de/en/) for the three hour
 period beginning at BeginHour.
 
